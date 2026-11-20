@@ -1,0 +1,43 @@
+{
+  "id": "./",
+  "name": "Aqua · Cisterna inteligente",
+  "short_name": "Aqua",
+  "description": "Monitoreo inteligente del agua de lluvia y la cisterna.",
+  "lang": "es",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0b1b2b",
+  "theme_color": "#0b1b2b",
+  "icons": [
+    {
+      "src": "assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Llenado",
+      "url": "pantallas/llenado.html"
+    },
+    {
+      "name": "Calidad del agua",
+      "url": "pantallas/calidad.html"
+    }
+  ]
+}
