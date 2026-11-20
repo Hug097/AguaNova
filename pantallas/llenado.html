@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b1b2b">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="apple-touch-icon" href="../assets/icons/icon-180.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Aqua">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Aqua · Llenado</title>
+<link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Nunito:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="../style/style.css">
+<link rel="stylesheet" href="../style/pantallas.css">
+</head>
+<body data-base="../" data-pagina="llenado">
+<div class="app dos">
+
+  <header class="top">
+    <div class="izq"><a class="atras" href="../index.html" aria-label="Volver al inicio"><span data-ico="atras"></span></a><h1>Llenado</h1></div>
+    <div class="acciones"><span class="pill-sim">Simulado</span><button class="btn-ico" data-instalar hidden aria-label="Instalar app"><span data-ico="descargar"></span></button></div>
+  </header>
+
+  <section class="card det mitad">
+    <div class="tank" id="tanque"></div>
+    <div class="lista">
+      <div><span>Nivel</span><b id="dNivel">--</b></div>
+      <div><span>Agua</span><b id="dLitros">--</b></div>
+      <div><span>Estado</span><b><span class="pill" id="dEstado">--</span></b></div>
+      <div><span>Llena en</span><b id="dLlena">--</b></div>
+    </div>
+  </section>
+
+  <section class="card mitad">
+    <div class="card-h"><h2>Hitos de llenado</h2></div>
+    <div class="hitos" id="hitos"></div>
+    <p class="nota ciclo-txt" id="cicloTxt"></p>
+  </section>
+
+  <section class="card mitad" id="destinos">
+    <div class="card-h">
+      <h2>¿A dónde se fue el agua?</h2>
+      <div class="chips" data-g="unidad"><button class="chip on" data-v="%">%</button><button class="chip" data-v="L">Litros</button></div>
+    </div>
+    <div class="chips" data-g="modo" style="margin-bottom:12px"><button class="chip on" data-v="ciclo">Último llenado</button><button class="chip" data-v="total">Total</button></div>
+    <div class="d-lista"></div>
+    <p class="nota d-nota"></p>
+  </section>
+
+
+  <section class="card mitad">
+    <div class="card-h">
+      <h2>Historial del nivel</h2>
+      <div class="chips" id="chipsRango">
+        <button class="chip" data-n="24">2 h</button>
+        <button class="chip on" data-n="72">6 h</button>
+        <button class="chip" data-n="144">12 h</button>
+      </div>
+    </div>
+    <div class="grafica" id="grafica"></div>
+    <div class="res">
+      <div><b id="rMax">--</b><span>Máximo</span></div>
+      <div><b id="rMin">--</b><span>Mínimo</span></div>
+      <div><b id="rProm">--</b><span>Promedio</span></div>
+    </div>
+  </section>
+
+  <h2 class="sec">Más datos del agua</h2>
+  <section class="stats" id="stats"></section>
+  <p class="nota" style="text-align:center">Toca un dato para ver qué significa.</p>
+
+  <footer id="ultima">Prototipo con datos simulados</footer>
+</div>
+
+<script src="../js/datos.js"></script>
+<script src="../js/comun.js"></script>
+<script src="../js/llenado.js"></script>
+<script src="../js/pwa.js"></script>
+</body>
+</html>

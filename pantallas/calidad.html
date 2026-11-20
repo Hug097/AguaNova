@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b1b2b">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="apple-touch-icon" href="../assets/icons/icon-180.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Aqua">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Aqua · Calidad del agua</title>
+<link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Nunito:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="../style/style.css">
+<link rel="stylesheet" href="../style/pantallas.css">
+</head>
+<body data-base="../" data-pagina="calidad">
+<div class="app dos">
+
+  <header class="top">
+    <div class="izq"><a class="atras" href="../index.html" aria-label="Volver al inicio"><span data-ico="atras"></span></a><h1>Calidad del agua</h1></div>
+    <div class="acciones"><span class="pill-sim">Simulado</span><button class="btn-ico" data-instalar hidden aria-label="Instalar app"><span data-ico="descargar"></span></button></div>
+  </header>
+
+  <section class="card score mitad o1">
+    <div class="anillo" id="anillo"></div>
+    <div class="txt">
+      <div class="label">Calificación</div>
+      <h2 id="uso">--</h2>
+      <span class="pill" id="scorePill">--</span>
+    </div>
+  </section>
+
+  <section class="metricas o3" id="metricas"></section>
+
+  <section class="card o4">
+    <div class="card-h">
+      <h2 id="grafTitulo">pH</h2>
+      <div class="chips" id="chipsRango">
+        <button class="chip" data-n="24">2 h</button>
+        <button class="chip on" data-n="72">6 h</button>
+        <button class="chip" data-n="144">12 h</button>
+      </div>
+    </div>
+    <div class="grafica" id="grafica"></div>
+    <p class="desc-m" id="descM"></p>
+    <p class="pista">La franja verde es el rango recomendado</p>
+  </section>
+
+  <section class="card aviso-sim mitad o2">
+    <img class="sticker" src="../assets/stickers/gotita-feliz.svg" alt="">
+    <p class="nota">Estos datos son de ejemplo. Tu ESP32 actual solo mide nivel y lluvia; para medir la calidad de verdad necesitarías sensores de pH, turbidez, TDS y temperatura.</p>
+  </section>
+
+  <footer id="ultima">Prototipo con datos simulados</footer>
+</div>
+
+<script src="../js/datos.js"></script>
+<script src="../js/comun.js"></script>
+<script src="../js/calidad.js"></script>
+<script src="../js/pwa.js"></script>
+</body>
+</html>

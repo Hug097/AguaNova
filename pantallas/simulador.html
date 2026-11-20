@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b1b2b">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="apple-touch-icon" href="../assets/icons/icon-180.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Aqua">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Aqua · Simulador</title>
+<link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Nunito:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="../style/style.css">
+<link rel="stylesheet" href="../style/pantallas.css">
+</head>
+<body data-base="../" data-pagina="simulador">
+<div class="app dos">
+
+  <header class="top">
+    <div class="izq"><a class="atras" href="../index.html" aria-label="Volver al inicio"><span data-ico="atras"></span></a><h1>Simulador</h1></div>
+    <div class="acciones"><span class="pill-sim">Simulado</span><button class="btn-ico" data-instalar hidden aria-label="Instalar app"><span data-ico="descargar"></span></button></div>
+  </header>
+
+  <section class="card vivo mitad">
+    <img class="sticker flota" id="mascota" src="../assets/stickers/gotita-feliz.svg" alt="">
+    <div style="flex:1">
+      <div class="label">Ahora</div>
+      <div class="num" id="vNivel">--</div>
+      <p id="vTexto">--</p>
+    </div>
+    <span class="pill" id="vEstado">--</span>
+  </section>
+
+  <section class="card mitad">
+    <div class="card-h"><h2>Actualizar datos</h2></div>
+    <div class="botones">
+      <button class="btn primary ancho" id="btnAct"><span data-ico="refresh"></span>Actualizar ahora</button>
+      <button class="btn" id="btnNuevos">Generar datos nuevos</button>
+      <button class="btn peligro" id="btnReset">Reiniciar todo</button>
+    </div>
+    <p class="nota" style="margin-top:10px" id="ultima">Cada actualización avanza 5 minutos simulados.</p>
+  </section>
+
+  <section class="card ctl mitad">
+    <div class="card-h" style="margin-bottom:0"><h2>Simulación</h2></div>
+    <div class="fila-ctl">
+      <div class="n">Simulación automática<small>Se actualiza sola cada pocos segundos</small></div>
+      <label class="switch"><input type="checkbox" id="swAuto" aria-label="Simulación automática"><span></span></label>
+    </div>
+    <div class="fila-ctl">
+      <div class="n">Lluvia aleatoria<small>El clima cambia solo</small></div>
+      <label class="switch"><input type="checkbox" id="swClima" aria-label="Lluvia aleatoria"><span></span></label>
+    </div>
+    <div class="fila-ctl">
+      <div class="n">Velocidad</div>
+      <select class="sel" id="selVel" aria-label="Velocidad de la simulación">
+        <option value="1">Normal (1x)</option>
+        <option value="2">Rápida (2x)</option>
+        <option value="5">Muy rápida (5x)</option>
+        <option value="10">Turbo (10x)</option>
+      </select>
+    </div>
+  </section>
+
+  <section class="card ctl mitad">
+    <div class="card-h" style="margin-bottom:0"><h2>Agua y lluvia</h2></div>
+    <div class="deslizador">
+      <div class="cab"><span>Nivel de la cisterna</span><output id="oNivel">0 %</output></div>
+      <input class="rango" type="range" id="rNivel" min="0" max="100" step="1" aria-label="Nivel de la cisterna">
+    </div>
+    <div class="fila-ctl">
+      <div class="n">Está lloviendo<small>La tapa se abre y entra agua</small></div>
+      <label class="switch"><input type="checkbox" id="swLluvia" aria-label="Está lloviendo"><span></span></label>
+    </div>
+  </section>
+
+  <section class="card ctl mitad">
+    <div class="card-h" style="margin-bottom:0"><h2>Calidad del agua</h2></div>
+    <div class="deslizador"><div class="cab"><span>pH</span><output id="oPh"></output></div>
+      <input class="rango" type="range" id="rPh" min="5" max="9" step="0.1" aria-label="pH"></div>
+    <div class="deslizador"><div class="cab"><span>Turbidez (NTU)</span><output id="oTurbidez"></output></div>
+      <input class="rango" type="range" id="rTurbidez" min="0" max="10" step="0.1" aria-label="Turbidez"></div>
+    <div class="deslizador"><div class="cab"><span>Temperatura (°C)</span><output id="oTemp"></output></div>
+      <input class="rango" type="range" id="rTemp" min="5" max="40" step="0.5" aria-label="Temperatura"></div>
+    <div class="deslizador"><div class="cab"><span>Sólidos disueltos (ppm)</span><output id="oTds"></output></div>
+      <input class="rango" type="range" id="rTds" min="20" max="600" step="5" aria-label="Sólidos disueltos"></div>
+  </section>
+
+  <section class="card mitad">
+    <div class="card-h"><h2>Atajos</h2></div>
+    <div class="botones">
+      <button class="btn" id="aLlenar">Llenar al 100 %</button>
+      <button class="btn" id="aVaciar">Vaciar al 5 %</button>
+      <button class="btn ancho" id="aCiclo">Simular un ciclo completo</button>
+      <button class="btn" id="aCiclos9">Ciclos a 9</button>
+      <button class="btn" id="aCiclos10">Ciclos a 10 (aviso)</button>
+    </div>
+  </section>
+
+  <footer>Los cambios se guardan en este navegador</footer>
+</div>
+
+<script src="../js/datos.js"></script>
+<script src="../js/comun.js"></script>
+<script src="../js/simulador.js"></script>
+<script src="../js/pwa.js"></script>
+</body>
+</html>

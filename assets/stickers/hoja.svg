@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs><path id="h" d="M18 82C14 48 34 16 84 14c2 48-18 72-52 70"/></defs>
+  <use href="#h" fill="#fff" stroke="#fff" stroke-width="9" stroke-linejoin="round"/>
+  <use href="#h" fill="#4cc77d"/>
+  <path d="M20 84C36 60 54 42 76 26" fill="none" stroke="#1f8f50" stroke-width="3.4" stroke-linecap="round"/>
+  <path d="M42 62l12 2M52 50l12 0M34 72l8-2" stroke="#1f8f50" stroke-width="2.4" stroke-linecap="round"/>
+</svg>

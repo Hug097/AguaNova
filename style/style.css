@@ -1,0 +1,240 @@
+/* Aqua · estilos base (inicio y componentes compartidos) */
+:root{
+  --bg:#0b1b2b;--card:#12283d;--card2:#17314b;--line:#21405e;
+  --text:#eaf3fb;--muted:#8fa8bf;
+  --ok:#34d399;--warn:#fbbf24;--bad:#f87171;--azul:#4cb8ff;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Nunito',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  background:radial-gradient(900px 500px at 50% -10%,#18486b 0%,var(--bg) 65%) fixed;
+  color:var(--text);min-height:100vh;padding:18px 16px 110px;display:flex;justify-content:center;
+}
+h1,h2,h3,.num{font-family:'Baloo 2','Nunito',system-ui,sans-serif;font-weight:700}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;color:inherit}
+img{display:block}
+.app{width:100%;max-width:480px;display:flex;flex-direction:column;gap:14px}
+
+/* ---- cabecera ---- */
+.top{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:0 2px}
+.top h1{font-size:22px;line-height:1.1}
+.marca{display:flex;align-items:center;gap:10px}
+.marca small{display:block;font-size:12px;color:var(--muted);margin-top:1px}
+.acciones{display:flex;align-items:center;gap:8px}
+.pill-sim{font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--warn);background:rgba(251,191,36,.14);border:1px solid rgba(251,191,36,.4);border-radius:999px;padding:4px 10px}
+.btn-ico,.atras{width:40px;height:40px;border-radius:13px;display:grid;place-items:center;background:var(--card);border:1px solid var(--line);cursor:pointer;transition:.15s}
+.btn-ico:hover,.atras:hover{border-color:var(--azul)}
+.btn-ico:active,.atras:active{transform:scale(.94)}
+.btn-ico svg,.atras svg{width:20px;height:20px}
+.btn-ico.gira svg{animation:gira .7s ease}
+@keyframes gira{to{transform:rotate(360deg)}}
+.top .izq{display:flex;align-items:center;gap:12px}
+
+/* ---- tarjetas ---- */
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px}
+.card h2{font-size:17px}
+.card-h{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px}
+.label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;font-weight:700}
+.sec{font-size:15px;color:var(--muted);font-weight:600;padding:4px 4px 0}
+.nota{font-size:13px;color:var(--muted);line-height:1.5}
+.vacio{color:var(--muted);font-size:14px;text-align:center;padding:24px 0}
+
+/* ---- saludo con mascota ---- */
+.saludo{display:flex;align-items:center;gap:14px;padding:14px 18px}
+.saludo .sticker{width:68px;height:68px;flex:0 0 68px}
+.saludo h2{font-size:19px;line-height:1.15}
+.saludo p{font-size:14px;color:var(--muted);margin-top:3px}
+
+.sticker{display:block;flex:0 0 auto}
+.flota{animation:flota 3.4s ease-in-out infinite}
+@keyframes flota{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+
+/* ---- alerta de filtros ---- */
+.alerta{display:none;align-items:center;gap:12px;padding:14px 16px;border-radius:18px;background:rgba(251,191,36,.14);border:1px solid rgba(251,191,36,.55);color:var(--warn)}
+.alerta.on{display:flex}
+.alerta svg{width:28px;height:28px;flex:0 0 28px}
+.alerta b{display:block;font-size:15px;color:var(--text)}
+.alerta span{font-size:13px}
+.alerta .ir{margin-left:auto;width:20px;height:20px}
+
+/* ---- tarjeta principal ---- */
+.main{display:flex;align-items:center;gap:16px}
+.tanque-btn{flex:0 0 150px;background:none;border:0;cursor:pointer;border-radius:16px;padding:0}
+.tanque-btn svg{width:100%;height:auto;display:block}
+.tanque-btn:active{transform:scale(.98)}
+.main .info{flex:1;min-width:0}
+.pct{font-family:'Baloo 2',sans-serif;font-size:62px;font-weight:700;line-height:1;margin:4px 0 10px;font-variant-numeric:tabular-nums}
+.pct small{font-size:24px;font-weight:600;color:var(--muted);margin-left:2px}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:5px 13px;border-radius:999px;font-size:14px;font-weight:700;background:rgba(143,168,191,.15);color:var(--muted)}
+.pill::before{content:"";width:9px;height:9px;border-radius:50%;background:currentColor}
+.pill.empty,.pill.mal{background:rgba(248,113,113,.15);color:var(--bad)}
+.pill.warn{background:rgba(251,191,36,.15);color:var(--warn)}
+.pill.ok{background:rgba(52,211,153,.15);color:var(--ok)}
+.meta{margin-top:12px;font-size:13px;color:var(--muted);line-height:1.6}
+.meta b{color:var(--text);font-weight:700}
+.ver-mas{display:inline-flex;align-items:center;gap:4px;margin-top:10px;font-size:13px;font-weight:700;color:var(--azul)}
+.ver-mas svg{width:16px;height:16px}
+.sugerencia{font-size:11px;color:var(--muted);text-align:center;margin-top:-4px}
+
+/* tanque */
+.agua{transition:transform 1.2s ease}
+.ola1{animation:o1 3.2s linear infinite}
+.ola2{animation:o2 5s linear infinite}
+@keyframes o1{from{transform:translateX(0)}to{transform:translateX(-70px)}}
+@keyframes o2{from{transform:translateX(-70px)}to{transform:translateX(0)}}
+.burb{fill:#fff;opacity:0;animation:sube 4.5s ease-in infinite}
+.burb.b2{animation-delay:1.4s;animation-duration:5.2s}
+.burb.b3{animation-delay:2.6s;animation-duration:3.9s}
+@keyframes sube{0%{transform:translateY(0);opacity:0}15%{opacity:.55}100%{transform:translateY(-55px);opacity:0}}
+
+/* ---- tiles ---- */
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tile{position:relative;display:flex;align-items:center;gap:12px;padding:14px;transition:.15s;overflow:hidden}
+.tile:hover{border-color:var(--azul)}
+.tile:active{transform:scale(.98)}
+.tile .sticker{width:46px;height:46px;flex:0 0 46px}
+.tile .v{font-size:17px;font-weight:800;margin-top:1px;line-height:1.15}
+.tile .sub{font-size:12px;color:var(--muted);margin-top:2px}
+.tile.on{border-color:rgba(76,184,255,.6)}
+.drops{display:none;position:absolute;left:12px;top:46px;width:46px;height:20px;pointer-events:none}
+.tile.on .drops{display:block}
+.drops i{position:absolute;top:0;width:3px;height:9px;border-radius:3px;background:var(--azul);opacity:0;animation:llueve .9s linear infinite}
+.drops i:nth-child(1){left:12px}
+.drops i:nth-child(2){left:22px;animation-delay:.3s}
+.drops i:nth-child(3){left:32px;animation-delay:.6s}
+@keyframes llueve{0%{transform:translateY(-4px);opacity:0}30%{opacity:.9}100%{transform:translateY(14px);opacity:0}}
+
+/* ---- chips ---- */
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{border:1px solid var(--line);background:transparent;color:var(--muted);font-size:13px;font-weight:700;padding:6px 12px;border-radius:999px;cursor:pointer;transition:.15s}
+.chip:hover{border-color:var(--azul);color:var(--text)}
+.chip.on{background:rgba(76,184,255,.18);border-color:var(--azul);color:var(--azul)}
+
+/* ---- botones ---- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:12px 16px;border-radius:14px;border:1px solid var(--line);background:transparent;color:var(--text);font-size:15px;font-weight:700;cursor:pointer;transition:.15s}
+.btn svg{width:18px;height:18px}
+.btn:hover{border-color:var(--azul)}
+.btn:active{transform:scale(.98)}
+.btn.primary{background:var(--azul);border-color:var(--azul);color:#06263f}
+.btn.primary:hover{filter:brightness(1.08)}
+.btn.peligro{color:var(--bad);border-color:rgba(248,113,113,.5)}
+
+/* ---- barra ---- */
+.bar{height:10px;border-radius:6px;background:rgba(143,168,191,.18);margin:12px 0;overflow:hidden}
+.bar i{display:block;height:100%;width:0;border-radius:6px;background:var(--azul);transition:width .6s,background .3s}
+.bar i.full{background:var(--warn)}
+
+/* ---- filtros (tarjeta de inicio) ---- */
+.filtro .fila{display:flex;align-items:center;gap:14px}
+.filtro .sticker{width:52px;height:52px;flex:0 0 52px}
+.filtro .v{font-size:16px;font-weight:800;margin-top:2px}
+.fc{margin-left:auto;font-family:'Baloo 2',sans-serif;font-size:28px;font-weight:700;font-variant-numeric:tabular-nums}
+
+/* ---- explora ---- */
+.explora{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ex{display:flex;flex-direction:column;gap:6px;padding:14px;min-height:128px;background:var(--card);border:1px solid var(--line);border-radius:20px;transition:.15s}
+.ex:hover{border-color:var(--azul);transform:translateY(-2px)}
+.ex:active{transform:scale(.98)}
+.ex .sticker{width:48px;height:48px}
+.ex b{font-family:'Baloo 2',sans-serif;font-size:17px;line-height:1.1;margin-top:4px}
+.ex span{font-size:12px;color:var(--muted);line-height:1.35}
+.ex.ancho{grid-column:1/-1;flex-direction:row;align-items:center;min-height:0;gap:14px}
+.ex.ancho div{display:flex;flex-direction:column;gap:2px}
+.ex.ancho .ir{margin-left:auto;width:20px;height:20px;color:var(--muted)}
+
+footer{text-align:center;font-size:12px;color:var(--muted);padding:4px 0}
+
+/* ---- gráfica ---- */
+.grafica{position:relative;touch-action:pan-y;cursor:crosshair;user-select:none}
+.grafica-svg{width:100%;height:auto;display:block}
+.g-grid{stroke:var(--line);stroke-width:1;stroke-dasharray:2 4}
+.g-eje{fill:var(--muted);font-size:9.5px;font-family:'Nunito',sans-serif}
+.g-meta{stroke:#8fa8bf;stroke-width:1;stroke-dasharray:5 4;opacity:.7}
+.g-txt{opacity:.9}
+.g-zona{fill:rgba(52,211,153,.1)}
+.g-marca line{stroke:#fff;stroke-opacity:.5;stroke-width:1}
+.g-marca circle{stroke:#fff;stroke-width:2}
+.g-tip{position:absolute;top:-4px;transform:translateX(-50%);background:#0b1b2b;border:1px solid var(--azul);border-radius:10px;padding:4px 10px;font-size:12px;pointer-events:none;display:flex;flex-direction:column;align-items:center;line-height:1.25;white-space:nowrap}
+.g-tip b{font-size:14px}
+.g-tip span{color:var(--muted);font-size:11px}
+.g-tip[hidden]{display:none}
+.pista{font-size:12px;color:var(--muted);text-align:center;margin-top:8px}
+
+/* ---- anillo ---- */
+.an-n{font-family:'Baloo 2',sans-serif;font-weight:700;font-size:30px;fill:var(--text)}
+.an-s{font-size:11px;fill:var(--muted);font-family:'Nunito',sans-serif;font-weight:700}
+
+/* ---- navegación inferior ---- */
+.nav{position:fixed;left:0;right:0;bottom:0;display:flex;justify-content:center;padding:0 12px calc(10px + env(safe-area-inset-bottom));pointer-events:none;z-index:20}
+.nav-in{pointer-events:auto;width:100%;max-width:480px;display:flex;background:rgba(18,40,61,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:22px;padding:6px}
+.nav a{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:8px 2px;border-radius:16px;color:var(--muted);font-size:11px;font-weight:700;transition:.15s}
+.nav a svg{width:22px;height:22px}
+.nav a.on{color:var(--azul);background:rgba(76,184,255,.14)}
+
+/* ---- aviso ---- */
+.toast{position:fixed;left:50%;bottom:92px;transform:translate(-50%,20px);background:#0b1b2b;border:1px solid var(--azul);color:var(--text);padding:10px 18px;border-radius:14px;font-size:14px;font-weight:700;opacity:0;pointer-events:none;transition:.25s;z-index:30;max-width:90vw;text-align:center}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+
+/* ===== Destinos del agua ===== */
+.apil{display:flex;gap:2px;height:14px;border-radius:8px;overflow:hidden;margin-bottom:10px;background:rgba(143,168,191,.15)}
+.apil i{display:block;min-width:2px;transition:flex .6s}
+.dest{display:flex;align-items:center;gap:12px;padding:7px 0}
+.d-ico{width:38px;height:38px;flex:0 0 38px;border-radius:12px;display:grid;place-items:center}
+.d-ico svg{width:20px;height:20px}
+.d-c{flex:1;min-width:0}
+.d-t{display:flex;justify-content:space-between;gap:8px;font-size:14px}
+.d-t span{font-weight:800;font-variant-numeric:tabular-nums}
+.dest .bar{margin:6px 0 0;height:8px}
+.d-total{margin-top:8px}.d-total b{color:var(--text)}
+.d-nota{margin-top:4px;font-size:12px}
+
+/* ===== Instalar como app (PWA) ===== */
+[hidden]{display:none!important}
+.instalar-card{display:flex;align-items:center;gap:14px;padding:14px 16px;background:linear-gradient(135deg,rgba(76,184,255,.18),rgba(76,184,255,.04));border-color:rgba(76,184,255,.5)}
+.instalar-card .sticker{width:48px;height:48px;flex:0 0 48px}
+.instalar-card div{flex:1;min-width:0}
+.instalar-card b{display:block;font-size:15px}
+.instalar-card span{display:block;font-size:12px;color:var(--muted);line-height:1.35;margin-top:2px}
+.instalar-card .btn{width:auto;flex:0 0 auto;padding:10px 18px}
+.nav a.nav-marca,.nav-instalar{display:none}
+.dlg{position:fixed;inset:0;z-index:50;display:grid;place-items:center;padding:16px;background:rgba(3,10,18,.72)}
+.dlg-in{width:100%;max-width:420px;display:flex;flex-direction:column;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px}
+.dlg-in h2{font-size:20px}
+.dlg-in ol{padding-left:20px;display:flex;flex-direction:column;gap:8px;font-size:14px;line-height:1.45}
+.dlg-in ol b{color:var(--azul)}
+
+/* ===== Adaptable: tablet ===== */
+@media (min-width:700px){
+  body{padding:28px 28px 120px}
+  .app{max-width:760px;gap:18px}
+  .tiles,.explora{grid-template-columns:repeat(4,1fr)}
+  .ex.ancho{grid-column:1/-1}
+  .tanque-btn{flex-basis:190px}
+  .pct{font-size:72px}
+  .nav-in{max-width:600px}
+}
+/* ===== Adaptable: computadora (menú lateral + dos columnas) ===== */
+@media (min-width:1024px){
+  body{padding:32px 40px 40px 288px}
+  .app{max-width:1120px}
+  .nav{top:0;right:auto;width:256px;padding:16px;justify-content:flex-start}
+  .nav-in{max-width:none;height:100%;flex-direction:column;gap:4px;padding:14px 10px;border-radius:24px}
+  .nav a{flex:none;flex-direction:row;gap:12px;padding:12px 14px;font-size:15px}
+  .nav a.nav-marca{display:flex;padding:6px 14px 18px;font-family:'Baloo 2',sans-serif;font-size:24px;color:var(--text);background:none}
+  .nav-instalar{display:flex;align-items:center;gap:10px;margin-top:auto;padding:12px 14px;border-radius:16px;border:1px solid var(--azul);background:rgba(76,184,255,.14);color:var(--azul);font-weight:700;font-size:15px;cursor:pointer}
+  .nav-instalar svg{width:20px;height:20px}
+  .top .btn-ico[data-instalar]{display:none}
+  .toast{left:calc(50% + 124px);bottom:32px}
+  .cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;align-items:start}
+  .tiles{grid-template-columns:1fr 1fr}
+}
+.cols{display:contents}
+.col{display:flex;flex-direction:column;gap:14px}
+@media (min-width:700px){.col{gap:18px}}
+@media (min-width:1024px){.cols{display:grid}}

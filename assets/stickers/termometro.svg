@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs><g id="t"><rect x="40" y="8" width="20" height="62" rx="10"/><circle cx="50" cy="76" r="17"/></g></defs>
+  <use href="#t" fill="#fff" stroke="#fff" stroke-width="9" stroke-linejoin="round"/>
+  <use href="#t" fill="#e8f0f7"/>
+  <rect x="46" y="30" width="8" height="46" rx="4" fill="#ff5a4f"/>
+  <circle cx="50" cy="76" r="11" fill="#ff5a4f"/>
+  <path d="M62 20h6M62 32h6M62 44h6" stroke="#8fa8bf" stroke-width="3" stroke-linecap="round"/>
+  <ellipse cx="46" cy="72" rx="3" ry="4" fill="#fff" opacity=".5"/>
+</svg>

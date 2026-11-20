@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b1b2b">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="apple-touch-icon" href="../assets/icons/icon-180.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Aqua">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Aqua · Historial</title>
+<link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Nunito:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="../style/style.css">
+<link rel="stylesheet" href="../style/pantallas.css">
+</head>
+<body data-base="../" data-pagina="historial">
+<div class="app">
+
+  <header class="top">
+    <div class="izq"><a class="atras" href="../index.html" aria-label="Volver al inicio"><span data-ico="atras"></span></a><h1>Historial</h1></div>
+    <div class="acciones"><span class="pill-sim">Simulado</span><button class="btn-ico" data-instalar hidden aria-label="Instalar app"><span data-ico="descargar"></span></button></div>
+  </header>
+
+  <section class="resumen" id="resumen"></section>
+
+  <section class="card">
+    <div class="card-h">
+      <h2>Eventos</h2>
+      <button class="chip" id="btnCsv" aria-label="Descargar datos en CSV">Descargar CSV</button>
+    </div>
+    <div class="chips" id="filtros" style="margin-bottom:6px">
+      <button class="chip on" data-cat="todos">Todos</button>
+      <button class="chip" data-cat="lluvia">Lluvia</button>
+      <button class="chip" data-cat="ciclo">Ciclos</button>
+      <button class="chip" data-cat="filtros">Filtros</button>
+      <button class="chip" data-cat="nivel">Nivel</button>
+      <button class="chip" data-cat="tapa">Tapa</button>
+    </div>
+    <ul class="linea" id="linea"></ul>
+  </section>
+
+  <footer id="ultima">Prototipo con datos simulados</footer>
+</div>
+
+<script src="../js/datos.js"></script>
+<script src="../js/comun.js"></script>
+<script src="../js/historial.js"></script>
+<script src="../js/pwa.js"></script>
+</body>
+</html>
